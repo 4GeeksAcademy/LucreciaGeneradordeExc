@@ -24,7 +24,7 @@
 <body>
     <h1>Excuse Generator</h1>
     <button onclick="generateExcuse()">Generate Excuse</button>
-    <p id="excuse"></p>
+    <p id="excuse">My dog ate my homework</p>
 
     <script>
         const excuses = [
@@ -38,6 +38,7 @@
             "My pet needed immediate attention.",
             "I lost track of time.",
             "I have a personal commitment.",
+           
         ];
 
         function generateExcuse() {
@@ -45,7 +46,35 @@
             const randomIndex = Math.floor(Math.random() * excuses.length);
             const randomExcuse = excuses[randomIndex];
             excuseElement.textContent = randomExcuse;
+
+            
         }
-    </script>
+        window.onload = function (){
+         let who = ['The dog', 'My grandma', 'The mailman', 'My bird'];
+        let action = ['ate', 'peed', 'crushed', 'broke'];
+        let what = ['my homework', 'my phone', 'the car'];
+        let when = [
+            'before the class', 
+            'when I was sleeping', 
+            'while I was exercising',
+             'during my lunch', 
+             'while I was praying'];
+        }
+        const getRandomElement = (listElements) => {
+            let element = ""
+            element = listElements [Math.floor(Math.random() * listElements.length)]
+            return element;
+            
+        };      
+     
+        let excuseGen = document.querySelector ("#excuse");
+        console.log(excuseGen);
+        excuseGen.innerHTML = 
+        getRandomElement(who) + 
+        "" + getRandomElement(action) + 
+        "" +getRandomElement(what) + 
+        "" +getRandomElement(when)
+        
+        </script>
 </body>
 </html>
